@@ -3,13 +3,14 @@ from typing import List
 
 
 def twoSum(nums: List[int], target: int) -> List[int]:
-    
+    #Initializing dictionary in order to keep track of required numbers to complete a pair
     myDict = dict()
     for index,number in enumerate(nums):
+        #Checking if number exist in the dictionary then return the index of the pair
         if number in myDict:
             return[myDict[number],index]
-        
         else:
+            #Store (target-number) in the dictionary as a key so that we can directly check the other number in the dictionary which completes the pair.
             myDict[target-number] = index
             
 
